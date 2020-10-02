@@ -56,7 +56,7 @@ const BillCalculation = () => {
 
     return (
         <BillS>
-            <Container >
+            <Container>
               <Heading className='col-xs-12 col-md-6 text-left display-1 mb-4 bg-dark p-2 text-white rounded'>E-Bill Calculator</Heading>
 
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const BillCalculation = () => {
                       <Col>
                         <Form.Group controlId="validationCustom02">
                             <Form.Label style={{userSelect: 'none'}}>Current Unit</Form.Label>
-                            <Form.Control required onChange={handleChange2} placeholder="Eg.19360" type='number' />
+                            <Form.Control required onChange={handleChange2} placeholder="Eg.19360" type='number'/>
                         </Form.Group>
                       </Col>
                     </Row>
@@ -95,7 +95,11 @@ const BillCalculation = () => {
                       </Row>
                     </Container>
                   </Form>
-
+                  <Row>
+                    <Footer>
+                      Copyright &#169; {new Date().getFullYear()} <a href='https://twitter.com/aungmcs' target='__blank' >@aungmcs</a> | All rights reserved
+                    </Footer>
+                  </Row>
             </Container>
         </BillS>
     )
@@ -110,10 +114,17 @@ const BillS = styled.div`
     align-items: center;
     margin: 0 auto;
     padding: 0.6rem;
+    position: relative;
 `
 const Heading = styled.h2`
   font-size: 1.6rem;
 `
-
+const Footer = styled.footer`
+  text-align: center;
+  font-size: 0.8rem;
+  position: absolute;
+  width: 95%;
+  bottom: 10px;
+`
 
 export default BillCalculation
